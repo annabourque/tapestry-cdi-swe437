@@ -40,10 +40,8 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-    - name: Compile Tests
-      run: mvn --batch-mode --update-snapshots package
     - name: Check Tests
-      run: mvn test -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkConversationScope 
+      run: mvn test 
     - name: Test Report
       if: ${{ always() }}
       uses: scacap/action-surefire-report@v1
