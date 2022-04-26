@@ -33,6 +33,7 @@ jobs:
     - name: Test Report
       if: ${{ always() }}
       uses: scacap/action-surefire-report@v1
-    - name: Run Tests With NonDex mvn edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkConversationScope
+    - name: Run Tests With NonDex 
+      run: mvn edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkConversationScope
       
  
