@@ -36,7 +36,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: step one
-      run: mvn test -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkConversationScope
+      run: mvn test -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkConversationScope -e
   runNonDexTest:
     runs-on: ubuntu-latest
     
