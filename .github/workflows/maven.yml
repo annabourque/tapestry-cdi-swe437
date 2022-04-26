@@ -11,6 +11,10 @@ on:
 
 jobs:
   build:
+    strategy:
+      matrix:
+        # Test against the LTS Java versions. TODO: add JDK18 when it becomes available.
+        java: [ 8.0.x, 11.0.x, 17.0.x ]
 
     runs-on: ubuntu-latest
 
@@ -31,8 +35,9 @@ jobs:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
       uses: actions/setup-java@v3
+      
       with:
-        java-version: '11'
+        java-version: ${{ matrix.java }}
         distribution: 'temurin'
         cache: maven
     - name: step one
