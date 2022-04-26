@@ -22,5 +22,7 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
+    - name: regular run
       run: mvn test -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkConversationScope
+    - name: nondex run
+      run: mvn edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkConversationScope
