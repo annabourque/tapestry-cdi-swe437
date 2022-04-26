@@ -41,7 +41,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: step one
-      run: mvn test site -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkConversationScope -batch-mode --fail-at-end
+      run: mvn test -pl -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkConversationScope 
     - name: Test Report
       if: ${{ always() }}
       uses: scacap/action-surefire-report@v1
