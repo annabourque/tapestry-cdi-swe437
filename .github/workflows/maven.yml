@@ -28,14 +28,11 @@ jobs:
         cache: maven
     - name: Compile Tests
       run: mvn test-compile 
-      
     - name: Check Tests
       run: mvn test -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkconversationScope
-      
     - name: Test Report
       if: ${{ always() }}
       uses: scacap/action-surefire-report@v1
-      
     - name: Run Tests With NonDex mvn edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkConversationScope
       
  
